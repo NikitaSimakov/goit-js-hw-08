@@ -10,9 +10,9 @@ function onPlay({ seconds }) {
     localStorage.setItem('videoplayer-current-time', seconds);
     
 }
-console.log(localStorage.getItem('videoplayer-current-time'));
+// console.log(localStorage.getItem('videoplayer-current-time'));
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
-player.setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')));
-// player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+// player.setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')));
+player.setCurrentTime(localStorage.getItem('videoplayer-current-time') || 0);
