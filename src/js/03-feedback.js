@@ -28,7 +28,8 @@ function onTextAreaInput(evt) {
 function onFormSubmit(evt) {
     evt.preventDefault();
     const formData = new FormData(refs.form);
-    formData.forEach((name, value) => console.log(name, value));
+    // formData.forEach((name, value) => console.log(name, value));
+    console.log('Form send:', localStorage.getItem(STORAGE_KEY));
 
     evt.target.reset();
     localStorage.removeItem(STORAGE_KEY);
